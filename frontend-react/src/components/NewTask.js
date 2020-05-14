@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Button, Grid, TextField } from '@material-ui/core';
 import { createTask } from '../redux/actions';
 
 const NewTask = () => {
@@ -19,16 +20,20 @@ const NewTask = () => {
     };
     
     return (
-        isCreating
-        ? <div>
-            <form onSubmit={handleSubmit}>
-                <input required type="text" placeholder="Title" name="title" onChange={handleInputChange} />
-                <input required type="text" placeholder="Description" name="description" onChange={handleInputChange} />
-                <input type="submit" value="Create" />
-                <button onClick={() => setIsCreating(false)}>Cancel</button>
-            </form>
-        </div>
-        : <button onClick={() => setIsCreating(true)}>New Task</button>
+        <Grid container justify="center" spacing={4}>
+            <Grid item>
+                {
+                    isCreating
+                    ? <form onSubmit={handleSubmit}>
+                        <TextField required variant="outlined" label="Title" name="title" onChange={handleInputChange} />
+                        <TextField required variant="outlined" label="Description" name="description" onChange={handleInputChange} />
+                        <Button variant="contained" color="secondary" onClick={() => setIsCreating(false)}>Cancel</Button>
+                        <Button variant="contained" color="primary" type="submit">Create</Button>
+                    </form>
+                    : <Button variant="contained" color="primary" onClick={() => setIsCreating(true)}>New Task</Button>
+                }
+            </Grid>
+        </Grid>
     );
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Grid } from '@material-ui/core';
 import { fetchTasks } from '../redux/actions';
 import { TaskItem } from './TaskItem';
 
@@ -9,7 +10,11 @@ const TaskList = () => {
 
     useEffect(async () => dispatch(fetchTasks()), []);
 
-    return tasks.map(task => <TaskItem {...task} />);
+    return (
+        <Grid container justify="center" spacing={5}>
+            {tasks.map(task => <TaskItem key={task.id} {...task} />)}
+        </Grid>
+    );
 };
 
 export {

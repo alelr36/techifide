@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { Grid, Typography} from '@material-ui/core';
 import configureStore from './redux/configureStore';
 
 import { NewTask } from './components/NewTask';
@@ -11,13 +12,13 @@ const store = configureStore();
 function App() {
 	return (
 		<Provider store={store}>
-			<div className="App">
-				<h1>
+			<Grid className="App">
+				<Typography variant="h2" gutterBottom>
 					APP TITLE
-				</h1>
+				</Typography>
 				<NewTask />
 				<TaskList />
-			</div>
+			</Grid>
 		</Provider>
 	);
 }
