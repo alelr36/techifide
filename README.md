@@ -22,3 +22,5 @@ MySQL database is hosted in a _MySQL as a service_ platform. Access data should 
 
 ## Other commands
 `npm run test`
+
+This command can be run at the **root of the project** to execute backend tests, or **inside frontend folder** to run frontend tests.
