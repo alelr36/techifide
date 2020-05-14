@@ -65,16 +65,24 @@ const TaskItem = task => {
     return (
         <Grid item className={`task task-${status}`} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
             <Popover
-            className={classes.popover}
-            classes={{
-            paper: classes.paper,
-            }}
-            open={isHovering}
-            anchorEl={anchorEl}
-            onClose={handlePopoverClose}
-            container={anchorEl && anchorEl.parentNode}
-            disableRestoreFocus
-            >
+                className={classes.popover}
+                classes={{
+                paper: classes.paper,
+                }}
+                open={isHovering}
+                anchorEl={anchorEl}
+                onClose={handlePopoverClose}
+                container={anchorEl && anchorEl.parentNode}
+                disableRestoreFocus
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                  transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                  }}          
+                >
                 <Typography>{description}</Typography>
             </Popover>
             <MoveTaskDialog {...dialogProps} />
