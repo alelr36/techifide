@@ -1,0 +1,30 @@
+.task {
+    margin: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.task-pending {
+    color: #873800;
+    border: 1px solid #873800;
+    background-color: #ffe9c7;
+}
+
+.task-progress {
+    color: #008732;
+    border: 1px solid #008732;
+    background-color: #c9ffdd;
+}
+
+.task-done {
+    text-decoration: line-through;
+    border: 1px solid #000;
+}
+
+.task-description {
+    position: absolute;
+    top: -10px;
+    left: 40%;
+    background-color: white;
+    border: 1px solid gray;
+}
