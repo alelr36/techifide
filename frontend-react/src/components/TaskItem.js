@@ -72,6 +72,7 @@ const TaskItem = task => {
             open={isHovering}
             anchorEl={anchorEl}
             onClose={handlePopoverClose}
+            container={anchorEl && anchorEl.parentNode}
             disableRestoreFocus
             >
                 <Typography>{description}</Typography>
