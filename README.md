@@ -8,10 +8,13 @@
 3. npm install
 4. cd frontend-react
 5. npm install
+6. Fill the file `nodemon.json` in the root of the project, using the credentials provided by email.
 
 ----
 After the comands above have been run, you can start the server by running
-`npm start` in root folder, and the front end can be started by running `npm start` in the _frontend-react_ folder
+`npm start` in root folder. This will start the server using 8000 port. Visiting http://localhost:8000 should show you a hello world message.
+
+The front end can be started by running `npm start` in the _frontend-react_ folder.
 
 ## Other commands
 `npm run test`

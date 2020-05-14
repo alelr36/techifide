@@ -1,0 +1,9 @@
+{
+    "env": {
+        "DB_HOST": "",
+        "DB_USER": "",
+        "DB_PASSWORD": "",
+        "DB_PORT": 0,
+        "DB_NAME": ""
+    }
+}
