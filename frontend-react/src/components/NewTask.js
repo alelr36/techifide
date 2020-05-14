@@ -25,8 +25,8 @@ const NewTask = () => {
                 {
                     isCreating
                     ? <form onSubmit={handleSubmit}>
-                        <TextField required variant="outlined" label="Title" name="title" onChange={handleInputChange} />
-                        <TextField required variant="outlined" label="Description" name="description" onChange={handleInputChange} />
+                        <TextField required inputProps={{ 'id': 'title' }} InputLabelProps={{ 'htmlFor': 'title' }} variant="outlined" label="Title" name="title" onChange={handleInputChange} />
+                        <TextField required inputProps={{ 'id': 'description' }} InputLabelProps={{ 'htmlFor': 'description' }} variant="outlined" label="Description" name="description" onChange={handleInputChange} />
                         <Button variant="contained" color="secondary" onClick={() => setIsCreating(false)}>Cancel</Button>
                         <Button variant="contained" color="primary" type="submit">Create</Button>
                     </form>

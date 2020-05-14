@@ -4,11 +4,16 @@ import { Grid } from '@material-ui/core';
 import { fetchTasks } from '../redux/actions';
 import { TaskItem } from './TaskItem';
 
-const TaskList = () => {
+const TasksList = () => {
     const dispatch = useDispatch();
     const tasks = useSelector(state => state.tasks.data);
 
-    useEffect(async () => dispatch(fetchTasks()), []);
+    useEffect(() => {
+        async function fetchData() {
+            await dispatch(fetchTasks());
+        }
+        fetchData();
+    });
 
     return (
         <Grid container justify="center" spacing={5}>
@@ -18,5 +23,5 @@ const TaskList = () => {
 };
 
 export {
-    TaskList,
+    TasksList,
 };

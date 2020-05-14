@@ -5,8 +5,9 @@ import { Button, Box, Typography, Dialog, DialogContent, DialogContentText, Dial
 const MoveTaskDialog = ({isTransitioning, handleClose, handleProceed, title, status, transitions}) => (
     <Dialog open={isTransitioning} onClose={handleClose}>
         <DialogContent>
-        <DialogContentText>
-            <Typography>You are transitinoing the task <Box fontWeight="fontWeightBold">{title}</Box></Typography>
+        <DialogContentText component="div">
+            <Typography>You are transitinoing the task:</Typography>
+            <Box fontWeight="fontWeightBold">{title}</Box>
             <Typography>{transitions[status]}?</Typography>
         </DialogContentText>
         </DialogContent>

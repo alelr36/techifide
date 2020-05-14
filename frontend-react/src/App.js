@@ -4,7 +4,7 @@ import { Grid, Typography} from '@material-ui/core';
 import configureStore from './redux/configureStore';
 
 import { NewTask } from './components/NewTask';
-import { TaskList } from './components/TasksList';
+import { TasksList } from './components/TasksList';
 import './App.css';
 
 const store = configureStore();
@@ -17,7 +17,7 @@ function App() {
 					APP TITLE
 				</Typography>
 				<NewTask />
-				<TaskList />
+				<TasksList />
 			</Grid>
 		</Provider>
 	);

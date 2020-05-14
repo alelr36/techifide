@@ -18,14 +18,14 @@ test('renders new task component', () => {
 });
 
 test('renders new task form when new task button is clicked', () => {
-    const { getByText, getByPlaceholderText } = render(
+    const { getByText, getByLabelText } = render(
     <Provider store={mockStore}>
         <NewTask />
     </Provider>);
 
     fireEvent.click(getByText(/New Task/i));
-    const titleInput = getByPlaceholderText(/Title/i);
-    const descriptionInput = getByPlaceholderText(/Description/i);
+    const titleInput = getByLabelText(/Title/i);
+    const descriptionInput = getByLabelText(/Description/i);
     const submitInput = getByText(/Create/i)
     const cancelInput = getByText(/Cancel/i)
 
@@ -36,14 +36,14 @@ test('renders new task form when new task button is clicked', () => {
 });
 
 test('renders new task form with empty values and allows to modify them', () => {
-    const { getByText, getByPlaceholderText } = render(
+    const { getByText, getByLabelText } = render(
     <Provider store={mockStore}>
         <NewTask />
     </Provider>);
 
     fireEvent.click(getByText(/New Task/i));
-    const titleInput = getByPlaceholderText(/Title/i);
-    const descriptionInput = getByPlaceholderText(/Description/i);
+    const titleInput = getByLabelText(/Title/i);
+    const descriptionInput = getByLabelText(/Description/i);
 
     expect(titleInput).toBeInTheDocument();
     expect(descriptionInput).toBeInTheDocument();
