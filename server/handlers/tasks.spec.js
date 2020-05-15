@@ -12,7 +12,7 @@ describe('tasks', () => {
     });
 
     describe('fetchTasks', () => {        
-        it('call query', () => {
+        it('should call fetchTasks query with no params since query does not need them', () => {
             expect(mockedPool.query).toHaveBeenCalledTimes(0);
 
             const fetchTasksTest = fetchTasks(mockedPool);
@@ -24,7 +24,7 @@ describe('tasks', () => {
     });
 
     describe('createTask', () => {
-        it('should return 3 tasks when', () => {
+        it('should call createTask with a params given by req.body', () => {
             expect(mockedPool.query).toHaveBeenCalledTimes(0);
 
             const expectedNewTask = {test: 'task'};
@@ -37,7 +37,7 @@ describe('tasks', () => {
     });
 
     describe('updateTaskStatus', () => {
-        it('should return 3 tasks when', () => {
+        it('should call updateTaskStatus with a params given by req.body and for the task_id provided by url param', () => {
             expect(mockedPool.query).toHaveBeenCalledTimes(0);
 
             const mockedTask = { status: 'pending' };
