@@ -1,5 +1,11 @@
 # Task Manager App
 
+## Summary
+- Backend done using NodeJS, Express, MySQL. Lodash was not necessary. Unit tests included.
+- Frontend
+-- React version: solid, with a few look & feel extra features, state management usin redux and lodash for some minor obejct operations. Tests included.
+-- Vue version: very basic version, should be better organized. Vuex is used for state management, lodash for some minor object operations.
+
 ## Project Organization
 `server/` folder contains all the backend related files. Runs in port 8000.
 `frontend-react/` contains the front end version built using react and redux for state management. Runs in port 3000.
