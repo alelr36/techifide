@@ -26,6 +26,12 @@ export default new vuex.Store({
                     : {...task, status: get(result, 'data.task.status')}
                 )))
                 .catch(error => {throw error});
+        },
+        createTask({state: {tasks}}, {id, title, description, status}) {
+            axios
+            .post(`http://localhost:8000/tasks`, qs.stringify({id, title, description, status}))
+            .then(result => this.commit('SET_TASKS', tasks.concat(get(result, 'data.task'))))
+            .catch(error => {throw error});
         }
     },
     mutations: {
@@ -34,4 +40,4 @@ export default new vuex.Store({
         }
     }
 });
-//    data: state.data.concat(get(action, 'payload.data.task'))
+// state.data.concat(get(action, 'payload.data.task'))

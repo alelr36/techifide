@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <!-- <HelloWorld tasks={{ this.$store.state.tasks }} /> -->
+      <form @submit.prevent="handleSubmit">
+        <input required placeholder="Title" type="text" v-model="task.title">
+        <input required placeholder="Description" type="text" v-model="task.description">
+        <input type="submit" value="Create">
+      </form>
       <ul>
         <li v-for="task in this.$store.state.tasks"
             v-bind:key="task.id"
@@ -19,6 +24,15 @@
 
 export default {
   name: 'App',
+  data() {
+    return {
+      task: {
+        title: '',
+        description: '',
+        status: 'pending',
+      }
+    }
+  },
   mounted() {
     this.$store.dispatch('fetchTasks');
   },
@@ -28,6 +42,9 @@ export default {
   methods: {
     handleStatusChange(task) {
       this.$store.dispatch('changeStatus', task);
+    },
+    handleSubmit() {
+      this.$store.dispatch('createTask', this.task);
     }
   }
 }
